@@ -2,7 +2,7 @@ import datasource
 
 
 def initialize_launch_data():
-    launches = datasource.get_launches()
+    launches = datasource.get_data(datasource.LAUNCHES_URL)
     if launches:
         return launches
     else:
@@ -10,7 +10,7 @@ def initialize_launch_data():
 
 
 def initialize_rocket_data():
-    rockets = datasource.get_rockets()
+    rockets = datasource.get_data(datasource.ROCKETS_URL)
     if rockets:
         return rockets
     else:
@@ -18,7 +18,7 @@ def initialize_rocket_data():
 
 
 def initialize_launch_site_data():
-    launch_sites = datasource.get_launch_sites()
+    launch_sites = datasource.get_data(datasource.LAUNCH_SITES_URL)
     if launch_sites:
         return launch_sites
     else:

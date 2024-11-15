@@ -1,3 +1,22 @@
+def deserialize_launch_sites(launch_sites):
+    deserialized_launch_sites = []
+    for launch_site in launch_sites:
+        deserialized_launch_sites.append(
+            LaunchSite(
+                launch_site['site_id'],
+                launch_site['name'],
+                launch_site['status'],
+                launch_site['location']['name'],
+                launch_site['attempted_launches'],
+                launch_site['successful_launches'],
+                launch_site['details'],
+                launch_site['site_name_long']
+            )
+        )
+
+    return deserialized_launch_sites
+
+
 class LaunchSite:
     def __init__(self, site_id, name, status, location, attempted_launches, successful_launches, details, site_name_long):
         self.site_id = site_id

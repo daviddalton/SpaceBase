@@ -1,3 +1,19 @@
+def deserialize_launches(launches):
+    deserialized_launches = []
+    for launch in launches:
+        deserialized_launches.append(
+            Launch(
+                launch['flight_number'],
+                launch['mission_name'],
+                launch['launch_year'],
+                launch['rocket']['rocket_name'],
+                launch['launch_site']['site_name']
+            )
+        )
+
+    return deserialized_launches
+
+
 class Launch:
     def __init__(self, flight_number, mission_name, launch_year, rocket, launch_site):
         self.flight_number = flight_number

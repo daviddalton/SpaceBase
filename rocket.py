@@ -1,3 +1,23 @@
+def deserialize_rockets(rockets):
+    deserialized_rockets = []
+    for rocket in rockets:
+        deserialized_rockets.append(
+            Rocket(
+                rocket['rocket_id'],
+                rocket['rocket_name'],
+                rocket['description'],
+                rocket['active'],
+                rocket['company'],
+                rocket['first_flight'],
+                rocket['boosters'],
+                rocket['stages'],
+                rocket['mass']['lb']
+            )
+        )
+
+    return deserialized_rockets
+
+
 class Rocket:
     def __init__(self, rocket_id, name, description, active, company, first_flight, boosters, stages, mass):
         self.rocket_id = rocket_id
@@ -20,3 +40,6 @@ class Rocket:
                 " Boosters: " + str(self.boosters) +
                 " Stages: " + str(self.stages) +
                 " Mass: " + str(self.mass))
+
+
+
